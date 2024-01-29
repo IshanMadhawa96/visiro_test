@@ -56,7 +56,7 @@
 
       <p class="mb-1">
       <br/>
-        <a href="{{ url('login') }}">Login</a>
+        <a href="{{ url('') }}">Login</a>
       </p>
 
     </div>
