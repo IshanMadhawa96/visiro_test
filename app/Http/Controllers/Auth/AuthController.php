@@ -12,6 +12,7 @@ use Str;
 use Hash;
 class AuthController extends Controller
 {
+    //login page landing
     public function login(){
 
         if(!empty(Auth::check())){
@@ -20,6 +21,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    // login action
     public function AuthLogin(Request $request){
 
         request()->validate([
@@ -53,15 +55,18 @@ class AuthController extends Controller
         }
     }
 
+    //log out user
     public function logout(){
         Auth::logout();
         return view('auth.login');
     }
 
+    // forget password
     public function forgotPassword(){
         return view('auth.forgot');
     }
 
+    // forget password mail sending
     public function postForgotPassword(Request $request){
         $user = User::getEmailSingle($request->email);
         if(!empty($user)){
@@ -76,6 +81,7 @@ class AuthController extends Controller
         }
     }
 
+    // reset password landing page
     public function reset($token){
         $user = User::getTokenSingle($token);
        if(!empty($user)){
@@ -86,7 +92,8 @@ class AuthController extends Controller
         abort(404);
        }
     }
-
+    
+    // reset password action
     public function postReset($token,Request $request){
         if($request->password == $request->cpassword){
             $user = User::getTokenSingle($token);

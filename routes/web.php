@@ -15,6 +15,12 @@ Route::post('reset/{token}',[AuthController::class,'postReset']);
 
 Route::group(['middleware'=>'admin'],function(){
     Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('admin/users/list',[AdminController::class,'list']);
+    Route::get('admin/users/add',[AdminController::class,'add']);
+    Route::post('admin/users/add',[AdminController::class,'insert']);
+    Route::get('admin/users/edit/{id}',[AdminController::class,'edit']);
+    Route::post('admin/users/edit/{id}',[AdminController::class,'update']);
+    Route::get('admin/users/delete/{id}',[AdminController::class,'delete']);
 });
 
 Route::group(['middleware'=>'crm'],function(){
