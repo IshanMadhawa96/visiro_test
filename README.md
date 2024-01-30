@@ -27,11 +27,15 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
    ```bash
    git clone <repository-url>
-2.import "visro_lara_test" db file to MySQL and configure env
+2. run "composer install" in your terminal
+   
+4. create ".env" file
+   
+5. import "visro_lara_test" db file to MySQL and configure env
 
-3. run "php artisan serve" in your terminal
+6. run "php artisan serve" in your terminal
 
-##SCREENSHOTS
+## SCREENSHOTS
 1.
 <img src="https://github.com/IshanMadhawa96/visiro_test/blob/master/Screenshot%202024-01-30%20115955.png?raw=true">
 2.
